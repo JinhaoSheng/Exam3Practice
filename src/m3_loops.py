@@ -5,8 +5,8 @@ This problem provides practice at:
   ***  FOR and WHILE loops.  ***
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Jinhao Sheng.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -45,7 +45,7 @@ def main():
 def run_test_practice_problem3():
     """ Tests the   practice_problem3  function. """
     ####################################################################
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  practice_problem3  function defined below.
     #   Include at least ** 2 ** ADDITIONAL tests beyond those we wrote.
     #
@@ -123,6 +123,21 @@ def run_test_practice_problem3():
     # Run the 14 tests in the   tests   list constructed above.
     # ------------------------------------------------------------------
     st.SimpleTestCase.run_tests('practice_problem3', tests)
+
+    print()
+    # Test 1
+    expected = [1, 7]
+    answer = practice_problem3(-2, 2, 1.3)
+    print('Expected:', expected)
+    print('Actual:', answer)
+
+    print()
+
+    # Test 2
+    expected_2 = [-5, 0, 1, 2, 6, 7]
+    answer_2 = practice_problem3(-5, 6, 0.25)
+    print('Expected:', expected_2)
+    print('Actual:', answer_2)
 
     ####################################################################
     # TO DO 2 continued:  More tests:
@@ -208,7 +223,7 @@ def practice_problem3(start, n, threshold):
       :type threshold: float
     """
     ####################################################################
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Some tests are already written for you (above),
     #          but you are required to write ADDITIONAL tests (above).
     ####################################################################
@@ -217,8 +232,15 @@ def practice_problem3(start, n, threshold):
     #    TIME ESTIMATE:   < 15 minutes.
     ####################################################################
 
-
+    new = []
+    while len(new) < n:
+        if math.sin(start) + math.cos(start) > threshold:
+            new += [start]
+        start += 1
+    return new
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------
+
+
 main()
